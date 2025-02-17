@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>💰 Family Expense Tracker</h1>
+
+        <!-- Expense Form -->
+        <form id="expense-form">
+            <div class="input-group">
+                <input type="text" id="user" placeholder="Enter your name" required>
+                <input type="text" id="category" placeholder="Category (e.g., Food, Transport)" required>
+                <input type="number" id="amount" placeholder="Amount ($)" required>
+            </div>
+            <button type="submit">➕ Add Expense</button>
+        </form>
+
+       <!-- Search Bar -->
+<input type="text" id="search" placeholder="🔍 Search by User, Category, or Amount..." class="search-bar">
+        <!-- Total Expense -->
+         <h2>💰 Total Expense: $<span id="total-expense">0</span></h2>
+         
+        <!-- Expense Table -->
+        <h2>📌 Expense History</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>User</th>
+                    <th>Category</th>
+                    <th>Amount</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="expense-list">
+                <!-- Expenses will be loaded here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

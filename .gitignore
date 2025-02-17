@@ -1,0 +1,11 @@
+# Node dependencies
+node_modules/
+npm-debug.log
+
+# Environment files
+.env
+
+# Docker files
+*.log
+docker-compose.override.yml
+
