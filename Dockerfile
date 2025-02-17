@@ -1,22 +1,19 @@
-# Use Node.js as base image
-FROM node:18 AS backend
+FROM node:18
 
-# Set the working directory
 WORKDIR /app
 
-# Copy backend files
-COPY backend/package.json backend/package-lock.json ./
+# Copy only backend package files first
+COPY backend/package*.json ./
+
+# Install dependencies
 RUN npm install
-COPY backend .
 
-# Create a public directory and copy frontend files
-RUN mkdir -p /app/public
-COPY frontend/index.html /app/public/index.html
-COPY frontend/style.css /app/public/style.css
-COPY frontend/script.js /app/public/script.js
+# Copy backend source code - including all subdirectories
+COPY backend/ ./
 
-# Expose backend port
+# Create public directory and copy frontend files
+COPY frontend/public/ ./public/
+
 EXPOSE 5000
 
-# Start backend server
 CMD ["npm", "start"]
